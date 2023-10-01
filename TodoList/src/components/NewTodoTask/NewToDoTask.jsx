@@ -10,6 +10,7 @@ function uniqueId() {
 
 function NewTodoTask(props){
     const [task, setTask] = useState("")
+    const [task2, setTask2] = useState("");
     const [date, setDate] = useState("");
 
     const clickHandler = () => {
@@ -19,8 +20,9 @@ function NewTodoTask(props){
         }
         props.addNewTodo(newTodo);
         // console.log(newTodo)
-        setTask("")
-        setDate;("")
+        setTask("ss")
+        setTask2(task);
+        setDate("task")
 
     }
 
@@ -32,6 +34,14 @@ function NewTodoTask(props){
             <input
               value={task}
               onChange={(event) => setTask(event.target.value)}
+              type="text"
+            />
+          </div>
+          <div>
+            <label>Task2</label>
+            <input
+              value={task2}
+              onChange={(event) => setTask2(event.target.value)}
               type="text"
             />
           </div>
