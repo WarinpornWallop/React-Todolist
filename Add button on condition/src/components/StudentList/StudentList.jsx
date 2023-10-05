@@ -39,12 +39,16 @@ export function StudentList(props) {
         {/* ใช้คู่กับ if else ข้างบน */}
         {/* {contenList} */}
         {/* and operator ถ้าเป็นจริงจะแสดงข้างหลัง แต่ถ้าไม่เป็นจริงจะไม่แสดงผลลัพธ์ออกมา */}
-        {filteredStudents.length === 0 && <div>Not Found</div>}
+        {/* {filteredStudents.length === 0 && <div>Not Found</div>} */}
         {filteredStudents.length === 0 ? (
           <div>Not Found</div>
         ) : (
           filteredStudents.map((e) => (
             <StudentItem
+              editHandler={props.editHandler}
+              deleteHandler={props.deleteHandler}
+              key={e.id}
+              id={e.id}
               name={e.name}
               surname={e.surname}
               age={e.age}

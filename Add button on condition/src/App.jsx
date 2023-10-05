@@ -15,7 +15,7 @@ function App() {
   ];
   const [status, setStatus] = useState("Available");
   const [studentList, setStudentList] = useState(INITIAL_STUDENTS);
-
+  const [isShow, setIsShow] = useState(false);
   const clickEventHandler = () => {
     setStatus("Busy");
     console.log("status: ", status);
@@ -30,17 +30,42 @@ function App() {
     // ทำแบบนี้เพื่อให้เป็น array ตัวใหม
     setStudentList([newStudent, ...studentList]); 
   };
-  // const  objArray = [
-  //   { name: "AA", age: 16 },
-  //   { name: "BB", age: 17 },
-  //   { name: "CC", age: 15 },
-  // ];
+  const deleteHandler = (id) =>{
+    const newStudentList = studentList.filter((e) => e.id !== id);
+    setStudentList(newStudentList)
+  }
+  const editHandler = (id, student) =>{
+    // Clone new list
+    const newStudentList = [...studentList]
+
+    //Find and update the target student
+    const idx = studentList.findIndex((e) => e.id === id);
+    newStudentList[idx] = {...student}
+
+    //Set State
+    setStudentList(newStudentList);
+  }
+
   return (
     <div className="App">
-      <NewStudentItem onAddStudent={addStudentHandler} />
+      {isShow ? (
+        <NewStudentItem
+          setIsShow={setIsShow}
+          onAddStudent={addStudentHandler}
+        />
+      ) : (
+        <div className="add-button-container">
+          <button onClick={() => setIsShow(true)}>Add New Student</button>
+        </div>
+      )}
+
       {/* {objArray.map(e => <div>{e.name}</div>)} */}
       <hr />
-      <StudentList key={studentList.id} studentList={studentList} />
+      <StudentList
+        editHandler={editHandler}
+        deleteHandler={deleteHandler}
+        studentList={studentList}
+      />
       <h3>Status: {status}</h3>
       <button onClick={clickEventHandler}>Click me</button>
     </div>
