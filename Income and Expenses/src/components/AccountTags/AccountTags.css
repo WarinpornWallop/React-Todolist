@@ -1,0 +1,65 @@
+
+.Tag {
+    box-sizing: border-box;
+    margin: 0 8px 0 0;
+    color: #000000d9;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    display: inline-block;
+    height: auto;
+    padding: 0 7px;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.CreditCard {
+    color: #096dd9;
+    background: #accef2;
+    border-color: #096dd9;
+}
+
+.Cash {
+    color: #0d9c20;
+    background: #cffbd5;
+    border-color: #0d9c20;
+}
+
+.NoCash {
+    color: #d48806;
+    background: #fffbe6;
+    border-color: #ffe58f;
+}
+
+
+.Red {
+    color: #fff;
+    background-color: rgb(255, 85, 0);
+    border-color: transparent;
+}
+
+.LightBlue {
+    color: #fff;
+    background-color: rgb(45, 183, 245);
+    border-color: transparent;
+}
+
+.Green {
+    color: #fff;
+    background-color: rgb(135, 208, 104);
+    border-color: transparent;
+}
+
+.Blue {
+    color: #fff;
+    background-color: rgb(16, 142, 233);
+    border-color: transparent;
+}
