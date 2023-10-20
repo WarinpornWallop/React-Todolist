@@ -1,0 +1,9 @@
+.task-container {
+  margin: auto;
+  margin-top: 5px;
+}
+
+.task-item {
+  display: flex;
+  margin-top: 10px;
+}
